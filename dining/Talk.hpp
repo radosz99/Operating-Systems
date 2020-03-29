@@ -4,11 +4,11 @@
 
 class Talk
 {
+private:
 	std::mutex mutex;
-	std::condition_variable cv;
+	std::condition_variable_any cv;
 
 public:
 	void wait();
-
-	void notifyall();
+	void letEveryoneKnow();
 };

@@ -1,4 +1,3 @@
-
 #include "Talk.hpp"
 void Talk::wait()
 {
@@ -6,8 +5,7 @@ void Talk::wait()
 	cv.wait(lock);
 }
 
-void Talk::notifyall()
+void Talk::letEveryoneKnow()
 {
-	std::unique_lock<std::mutex> lock(mutex);
 	cv.notify_all();
 }

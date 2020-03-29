@@ -7,26 +7,20 @@
 #include <string>
 #include <iomanip>
 #include <condition_variable>
-#include "Logic.hpp"
+#include "Table.hpp"
 
-void dine()
+void run()
 {
-	std::cout << "Dinner started!" << std::endl;
-
-	{
-		Table table;
-		table.start();
-		std::this_thread::sleep_for(std::chrono::seconds(60));
-		table.stop();
-	}
-
-	std::cout << "Dinner done!" << std::endl;
+	Table table;
+	table.dinnerStart();
+	std::this_thread::sleep_for(std::chrono::seconds(30));
+	table.dinnerStop();
 }
 
 
 int main()
 {
-	dine();
+	run();
 
 	return 0;
 }

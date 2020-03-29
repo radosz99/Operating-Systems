@@ -1,29 +1,28 @@
 #include "Chopstick.hpp"
 
-Chopstick::Chopstick(int const ChopstickId, int const ownerId) :
+Chopstick::Chopstick(int ChopstickId, int ownerId) :
 	id(ChopstickId), owner(ownerId), dirty(true)
 {}
 
-void Chopstick::request(int const ownerId)
+void Chopstick::ask(int ownerId)
 {
 	while (owner != ownerId)
 	{
 		if (dirty)
 		{
-			std::lock_guard<std::mutex> lock(mutex);
-
+			std::scoped_lock<std::mutex> lock(mutex);
 			dirty = false;
 			owner = ownerId;
 		}
 		else
 		{
-			channel.wait();
+			talk.wait();
 		}
 	}
 }
 
-void Chopstick::done_using()
+void Chopstick::mealFinished()
 {
 	dirty = true;
-	channel.notifyall();
+	talk.letEveryoneKnow();
 }

@@ -1,20 +1,28 @@
 #pragma once
 #include<mutex>
+#include <atomic>
 #include"Talk.hpp"
 class Chopstick
 {
+private:
 	int id;
 	int owner;
-	bool dirty;
+	std::atomic<bool> dirty{ false };
 	std::mutex mutex;
-	Talk channel;
+	Talk talk;
 
 public:
-	Chopstick(int const ChopstickId, int const ownerId);
+	Chopstick(int ChopstickId, int ownerId);
+	void ask(int ownerId);
+	void mealFinished();
 
-	void request(int const ownerId);
+	std::mutex& getMutex() 
+	{ 
+		return mutex; 
+	}
 
-	void done_using();
+	int getId() {
+		return id;
+	}
 
-	std::mutex& getmutex() { return mutex; }
 };

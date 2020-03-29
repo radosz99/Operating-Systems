@@ -117,15 +117,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Chopstick.hpp" />
-    <ClInclude Include="Logic.hpp" />
+    <ClInclude Include="Philosopher.hpp" />
     <ClInclude Include="Random.hpp" />
+    <ClInclude Include="State.hpp" />
+    <ClInclude Include="Table.hpp" />
+    <ClInclude Include="TableSetup.hpp" />
     <ClInclude Include="Talk.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chopstick.cpp" />
-    <ClCompile Include="Logic.cpp" />
+    <ClCompile Include="Philosopher.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="Table.cpp" />
     <ClCompile Include="Talk.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
