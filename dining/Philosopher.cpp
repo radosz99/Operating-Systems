@@ -76,22 +76,22 @@ void Philosopher::print(std::string text)
 	std::cout << s2;
 }
 
-State Philosopher::getState() const
+State Philosopher::getState()
 {
 	return state;
 }
 
-float Philosopher::getProgress() const
+float Philosopher::getProgress()
 {
 	return progress;
 }
 
-std::string Philosopher::getName() const
+std::string Philosopher::getName()
 {
 	return name;
 }
 
-std::string Philosopher::getStateString() const
+std::string Philosopher::getStateString() 
 {
 	switch (state)
 	{

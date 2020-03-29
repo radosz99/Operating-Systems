@@ -9,15 +9,8 @@ private:
 
 public:
 	Talk talk;
-	bool getIfFinished() const
-	{
-		return done;
-	}
-
-	void setIfFinished(bool ifDone)
-	{
-		done.exchange(ifDone);
-	}
+	bool getIfFinished();
+	void setIfFinished(bool ifDone);
 
 
 };

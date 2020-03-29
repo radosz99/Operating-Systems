@@ -35,10 +35,10 @@ public:
 	void print(std::string text);
 	void eat();
 	void wait();
-	float getProgress() const;
-    State getState() const;
-    std::string getName() const;
-    std::string getStateString() const;
+	float getProgress();
+    State getState();
+    std::string getName();
+    std::string getStateString();
 
 
 	void think();
