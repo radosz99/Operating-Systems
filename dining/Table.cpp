@@ -1,4 +1,5 @@
 #include "Table.hpp"
+
 //Start obiadu i powiadomienie wszystkich w¹tków filozofów
 void Table::dinnerStart()
 {
