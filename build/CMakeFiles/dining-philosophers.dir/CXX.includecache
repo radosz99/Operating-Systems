@@ -111,6 +111,8 @@ Talk.hpp
 /home/radek/Pulpit/Operating-Systems/dining/Talk.cpp
 Talk.hpp
 /home/radek/Pulpit/Operating-Systems/dining/Talk.hpp
+iostream
+-
 
 /home/radek/Pulpit/Operating-Systems/dining/Talk.hpp
 mutex

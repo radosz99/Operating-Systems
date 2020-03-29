@@ -102,5 +102,7 @@ std::string Philosopher::getStateString()
 	case State::THINKING:
 		return "THINKING";
 	}
+
+return "NONE";
 }
 
