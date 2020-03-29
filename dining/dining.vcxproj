@@ -130,6 +130,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="TableSetup.cpp" />
     <ClCompile Include="Talk.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

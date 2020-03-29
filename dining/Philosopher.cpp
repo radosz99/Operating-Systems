@@ -71,7 +71,7 @@ void Philosopher::wait()
 void Philosopher::print(std::string text)
 {
 	std::ostringstream s1;
-	s1 << name << text << leftChopstick.getId() << " " << rightChopstick.getId() << std::endl;
+	s1 << name << text << leftChopstick.getId() << std::endl;
 	std::string s2 = s1.str();
 	std::cout << s2;
 }
