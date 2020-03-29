@@ -1,10 +1,12 @@
 #include "Talk.hpp"
-#include <iostream>
 void Talk::wait()
 {
 	std::unique_lock<std::mutex> lock(mutex);
-    while(!go)
-	    cv.wait(lock);
+	while (!go)
+	{
+		cv.wait(lock);
+	}
+	go = true;
 }
 
 void Talk::letEveryoneKnow()

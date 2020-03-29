@@ -1,3 +1,0 @@
-/home/radek/Pulpit/Operating-Systems/build/CMakeFiles/rebuild_cache.dir
-/home/radek/Pulpit/Operating-Systems/build/CMakeFiles/dining-philosophers.dir
-/home/radek/Pulpit/Operating-Systems/build/CMakeFiles/edit_cache.dir
