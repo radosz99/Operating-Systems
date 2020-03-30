@@ -12,7 +12,7 @@
 void run()
 {
 	Table table;
-	UI ui(table.getPhilosophers(), table);
+	UI ui(table.getPhilosophers(), table, table.getChopsticks());
 	table.dinnerStart();
 	while(table.getIsDinner());
 }
