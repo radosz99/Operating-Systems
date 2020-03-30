@@ -9,10 +9,11 @@
 class UI
 {
 public:
-	UI(const std::array<Philosopher, 7>& philosophers, Table& table);
+	UI(const std::array<Philosopher, 7>& philosophers, Table& table, const std::array<Chopstick, 7>& chopsticks);
 	~UI();
 
 	const std::array<Philosopher, 7>& philosophers;
+	const std::array<Chopstick, 7>& chopsticks;
 	Table& table;
     std::mutex changeMutex;
     bool ifStart = false;

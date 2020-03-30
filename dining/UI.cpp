@@ -4,7 +4,7 @@
 #include <math.h>
 #include "State.hpp"
 
-UI::UI(const std::array<Philosopher, 7>& philosophers, Table& table) : philosophers(philosophers), table(table)
+UI::UI(const std::array<Philosopher, 7>& philosophers, Table& table, const std::array<Chopstick, 7>& chopsticks) : philosophers(philosophers), table(table), chopsticks(chopsticks)
 {
 	initscr();
     keypad(stdscr, TRUE);
@@ -103,6 +103,7 @@ void UI::refreshStatuses()
             attron(COLOR_PAIR(3)); 
 	    	break;
 	    }
+
         std::pair<int, int> coords = outputCoords.at(i).coords;
         refreshState(stdscr, coords.first, coords.second, philosopher.getProgress(),philosopher.getName(),philosopher.getStateString());
 

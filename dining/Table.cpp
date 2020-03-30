@@ -13,6 +13,12 @@ void Table::dinnerStop()
     isDinner=false;
 }
 
+
+const std::array<Chopstick, 7> & Table::getChopsticks() {
+	return chopsticks;
+}
+
+
 	const std::array<Philosopher, 7> & Table::getPhilosophers() {
 		return philosophers;
 	}
