@@ -11,7 +11,7 @@ include_directories(${CURSES_INCLUDE_DIR})
 # threads
 find_package(Threads REQUIRED)
 
-set(SRC dining/main.cpp dining/Philosopher.cpp dining/Random.cpp dining/Table.cpp dining/Chopstick.cpp dining/Talk.cpp dining/TableSetup.cpp)
+set(SRC dining/main.cpp dining/Philosopher.cpp dining/Random.cpp dining/Table.cpp dining/Chopstick.cpp dining/Talk.cpp dining/TableSetup.cpp dining/UI.cpp)
 
 add_executable(dining-philosophers ${SRC})
 target_compile_options(dining-philosophers PRIVATE -Wall -Wextra -Wpedantic -O3)

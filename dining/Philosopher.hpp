@@ -16,8 +16,6 @@
 class Philosopher
 {
 private:
-	int hungry = 0;
-	int nothungry = 0;
 	int id;
 	std::string name;
 	table_setup& setup;
@@ -25,7 +23,7 @@ private:
 	Chopstick& rightChopstick;
 	std::thread thread;
 	std::atomic<float> progress = 0.0f;
-	std::atomic<State> state = State::THINKING;
+	std::atomic<State> state = State::thinking;
 
 public:
 	Philosopher(int id, std::string n, table_setup & s, Chopstick & l, Chopstick & r);
@@ -35,10 +33,10 @@ public:
 	void print(std::string text);
 	void eat();
 	void wait();
-	float getProgress();
-    State getState();
-    std::string getName();
-    std::string getStateString();
+	float getProgress() const;
+    State getState() const;
+    std::string getName() const;
+    std::string getStateString() const;
 
 
 	void think();
