@@ -17,20 +17,31 @@ UI::UI(const std::array<Philosopher, 7>& philosophers, Table& table) : philosoph
     init_pair(2, COLOR_GREEN, -1);
     init_pair(3, COLOR_RED, -1);
 
-    initializeMainWindow();
-    viewThread = std::make_unique<std::thread>(&UI::refreshView, this);
+	initializeWindow();
+	refreshThread = std::make_unique<std::thread>(&UI::refreshView, this);
     keyboardThread = std::make_unique<std::thread>(&UI::waitForPressedKey, this);   
 
 }
 
 UI::~UI()
 {
+	keyboardThread->join();
+	refreshThread->join();
+	destroyWindow(window);
+	endwin();
+}
+
+void UI::destroyWindow(WINDOW* window)
+{
+	wborder(window, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+	wrefresh(window);
+	delwin(window);
 }
 
 
-void UI::initializeMainWindow()
+void UI::initializeWindow()
 {
-    mainWindow = newwin(LINES, COLS, 0, 0);
+	window = newwin(LINES, COLS, 0, 0);
     const std::string centerHeader = "DINING PHILOSOPHERS USING CHANDI-MISRA ALGORITHM";
     const std::string rightHeader = "Radoslaw Lis SO2 19/20";
 
@@ -53,7 +64,7 @@ void UI::initializeMainWindow()
         outputCoords[i] = {{ rowIndex, colIndex + 10 }};
     }
 
-    wrefresh(mainWindow);
+    wrefresh(window);
 }
 
 void UI::refreshView()
@@ -62,7 +73,7 @@ void UI::refreshView()
     {
         clear();
         refreshStates();
-        wrefresh(mainWindow);
+        wrefresh(window);
         std::this_thread::sleep_for(std::chrono::milliseconds(150));
     }
 }
@@ -100,11 +111,6 @@ void UI::refreshStates()
 }
 void UI::refreshState(WINDOW *win, int y, int x, float progress, std::string name, std::string status)
 {   
-    if(ifStart==false){
-    mvwprintw(win, y, x, name.c_str());
-    refresh();
-}
-
     std::string finString;
     std::string progressInPercent = std::to_string((int)std::round(progress * 100));
     int lpad = std::round(progress * 30);
@@ -146,7 +152,7 @@ void UI::waitForPressedKey()
 {
     while (table.getIsDinner())
     {
-        int keyPressed = wgetch(mainWindow);
+        int keyPressed = wgetch(window);
 
         switch (keyPressed)
         {
