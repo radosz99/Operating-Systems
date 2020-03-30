@@ -11,6 +11,14 @@ _________________________________
 <a name="desc"></a>
 # General info
 Program for solve and visualize the Dining Philosophers problem.
+To run: 
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+$ ./dining-philosophers
+```
 ## Algorithm
 [Chandi-Misra algorithm](https://www.stolaf.edu/people/rab/pdc/text/dpsolns.htm)
 
@@ -19,7 +27,8 @@ Program for solve and visualize the Dining Philosophers problem.
 <a name="pre"></a>
 
 # Prerequisites
-- [LINUX](https://www.virtualbox.org/) 
-- [GCC](https://gcc.gnu.org/)
+- [LINUX](https://www.virtualbox.org/),
+- [GCC](https://gcc.gnu.org/),
+- C++17 (scoped_lock).
 
 
