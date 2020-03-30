@@ -145,9 +145,7 @@ void UI::refreshState(WINDOW *win, int y, int x, float progress, std::string nam
 }
 
 
-
-
-void UI::waitForPressedKey()
+void UI::endVisualisation()
 {
     while (table.getIsDinner())
     {
