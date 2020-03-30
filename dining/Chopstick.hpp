@@ -25,4 +25,5 @@ public:
 		return id;
 	}
 
+    int getOwner() const;
 };

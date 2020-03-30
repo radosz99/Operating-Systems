@@ -1,14 +1,34 @@
-#pragma once
 #include "Table.hpp"
+
 //Start obiadu i powiadomienie wszystkich w¹tków filozofów
 void Table::dinnerStart()
 {
-	std::cout << "XDDD" << std::endl;
-	std::cout << "XDDD" << std::endl;
+    isDinner=true;
 	setup.talk.letEveryoneKnow();
 }
 
 void Table::dinnerStop()
 {
 	setup.setIfFinished(true);
+    isDinner=false;
 }
+
+
+const std::array<Chopstick, 7> & Table::getChopsticks() {
+	return chopsticks;
+}
+
+
+	const std::array<Philosopher, 7> & Table::getPhilosophers() {
+		return philosophers;
+	}
+
+	const TableSetup &Table::getSetup() {
+		return setup;
+	}
+
+bool Table::getIsDinner() const
+{
+    return isDinner;
+}
+

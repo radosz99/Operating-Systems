@@ -1,3 +1,3 @@
 #pragma once
 
-enum class State { HUNGRY, EATING, THINKING };
+enum class State { hungry, eating, thinking };

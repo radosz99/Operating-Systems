@@ -16,19 +16,17 @@
 class Philosopher
 {
 private:
-	int hungry = 0;
-	int nothungry = 0;
 	int id;
 	std::string name;
-	table_setup& setup;
+	TableSetup& setup;
 	Chopstick& leftChopstick;
 	Chopstick& rightChopstick;
 	std::thread thread;
 	std::atomic<float> progress = 0.0f;
-	std::atomic<State> state = State::THINKING;
+	std::atomic<State> state = State::thinking;
 
 public:
-	Philosopher(int id, std::string n, table_setup & s, Chopstick & l, Chopstick & r);
+	Philosopher(int id, std::string n, TableSetup & s, Chopstick & l, Chopstick & r);
 	~Philosopher();
 
 	void run();

@@ -8,13 +8,13 @@
 #include <iomanip>
 #include <condition_variable>
 #include "Table.hpp"
-
+#include "UI.hpp"
 void run()
 {
 	Table table;
+	UI ui(table.getPhilosophers(), table, table.getChopsticks());
 	table.dinnerStart();
-	std::this_thread::sleep_for(std::chrono::seconds(30));
-	table.dinnerStop();
+	while(table.getIsDinner());
 }
 
 

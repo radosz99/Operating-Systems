@@ -123,6 +123,7 @@
     <ClInclude Include="Table.hpp" />
     <ClInclude Include="TableSetup.hpp" />
     <ClInclude Include="Talk.hpp" />
+    <ClInclude Include="UI.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chopstick.cpp" />
@@ -130,7 +131,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Table.cpp" />
+    <ClCompile Include="TableSetup.cpp" />
     <ClCompile Include="Talk.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

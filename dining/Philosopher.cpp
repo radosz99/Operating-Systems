@@ -12,7 +12,7 @@
 #include <sstream>
 
 
-Philosopher::Philosopher(int id, std::string n, table_setup & s, Chopstick & l, Chopstick & r) :
+Philosopher::Philosopher(int id, std::string n, TableSetup & s, Chopstick & l, Chopstick & r) :
 	id(id), name(n), setup(s), leftChopstick(l), rightChopstick(r), thread(&Philosopher::run, this)
 {
 }
@@ -36,7 +36,7 @@ void Philosopher::think()
 {
 	print(" is thinking ");
 	wait();
-	state = State::HUNGRY;
+	state = State::hungry;
 }
 
 void Philosopher::eat()
@@ -45,11 +45,11 @@ void Philosopher::eat()
 	rightChopstick.ask(id);
 	std::scoped_lock lock(rightChopstick.getMutex(), leftChopstick.getMutex());
 
-	state = State::EATING;
+	state = State::eating;
 	print(" started eating.");
 	wait();
 	print(" finished eating.");
-	state = State::THINKING;
+	state = State::thinking;
 	leftChopstick.mealFinished();
 	rightChopstick.mealFinished();
 
@@ -57,13 +57,12 @@ void Philosopher::eat()
 
 void Philosopher::wait()
 {
-	int delayCount = Random().randomInt(60, 200);
+	int delayCount = Random().randomInt(100, 160);
 
 	for (int i = 1; i <= delayCount; i++)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(50));
 		progress = static_cast<float>(i) / static_cast<float>(delayCount);
-		nothungry = nothungry + 50;
 	}
 	progress = 0.0f;
 }
@@ -71,9 +70,9 @@ void Philosopher::wait()
 void Philosopher::print(std::string text)
 {
 	std::ostringstream s1;
-	s1 << name << text << leftChopstick.getId() << " " << rightChopstick.getId() << std::endl;
+	s1 << name << text << std::endl;
 	std::string s2 = s1.str();
-	std::cout << s2;
+	//std::cout << s2;
 }
 
 State Philosopher::getState() const
@@ -91,16 +90,18 @@ std::string Philosopher::getName() const
 	return name;
 }
 
-std::string Philosopher::getStateString() const
+std::string Philosopher::getStateString()  const
 {
 	switch (state)
 	{
-	case State::HUNGRY:
-		return "HUNGRY";
-	case State::EATING:
-		return "EATING";
-	case State::THINKING:
-		return "THINKING";
+	case State::hungry:
+		return "hungry";
+	case State::eating:
+		return "eating";
+	case State::thinking:
+		return "thinking";
 	}
+
+return "NONE";
 }
 
