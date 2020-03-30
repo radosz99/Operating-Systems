@@ -8,7 +8,7 @@ class Table
 private:
     bool isDinner;
 	const static int philosophersAmount = 7;
-	table_setup setup;
+	TableSetup setup;
 
 	std::array<Chopstick, philosophersAmount> chopsticks
 	{
@@ -42,7 +42,7 @@ public:
 	void dinnerStop();
 	const std::array<Philosopher, 7> &getPhilosophers();
 	const std::array<Chopstick, 7> &getChopsticks();
-	const table_setup &getSetup();
+	const TableSetup &getSetup();
     bool getIsDinner() const;
 
 

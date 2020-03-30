@@ -18,7 +18,7 @@ class Philosopher
 private:
 	int id;
 	std::string name;
-	table_setup& setup;
+	TableSetup& setup;
 	Chopstick& leftChopstick;
 	Chopstick& rightChopstick;
 	std::thread thread;
@@ -26,7 +26,7 @@ private:
 	std::atomic<State> state = State::thinking;
 
 public:
-	Philosopher(int id, std::string n, table_setup & s, Chopstick & l, Chopstick & r);
+	Philosopher(int id, std::string n, TableSetup & s, Chopstick & l, Chopstick & r);
 	~Philosopher();
 
 	void run();

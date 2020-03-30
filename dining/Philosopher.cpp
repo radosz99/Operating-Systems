@@ -12,7 +12,7 @@
 #include <sstream>
 
 
-Philosopher::Philosopher(int id, std::string n, table_setup & s, Chopstick & l, Chopstick & r) :
+Philosopher::Philosopher(int id, std::string n, TableSetup & s, Chopstick & l, Chopstick & r) :
 	id(id), name(n), setup(s), leftChopstick(l), rightChopstick(r), thread(&Philosopher::run, this)
 {
 }

@@ -2,7 +2,7 @@
 #include <atomic>
 #include "Talk.hpp"
 
-class table_setup
+class TableSetup
 {
 private:
 	std::atomic<bool> done { false };

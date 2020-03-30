@@ -23,7 +23,7 @@ const std::array<Chopstick, 7> & Table::getChopsticks() {
 		return philosophers;
 	}
 
-	const table_setup &Table::getSetup() {
+	const TableSetup &Table::getSetup() {
 		return setup;
 	}
 

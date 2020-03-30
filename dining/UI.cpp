@@ -103,13 +103,13 @@ void UI::refreshStatuses()
     std::string stateHeader = "PHILOSOPHER STATUS:";
     std::string state1Header = "RESOURCE STATUS:";
     std::string stateProgressHeader = "STATE PROGRESS:";
-    std::string starvationHeader = "PHILOSOPHER'S STARVATION IN RELATION TO THE ENTIRE STARVATION:";
-    std::string starvation1Header = "STARVATION IN RELATION TO THE THINKING AND EATING:";
+    std::string starvationHeader = "PHILOSOPHER'S HUNGER IN RELATION TO THE ENTIRE HUNGER:";
+    std::string starvation1Header = "HUNGRY IN RELATION TO THE THINKING AND EATING:";
     mvwprintw(stdscr, 1, 5, stateHeader.c_str());
     mvwprintw(stdscr, 14, 25, state1Header.c_str());
     mvwprintw(stdscr, 14, 73, starvation1Header.c_str());
     mvwprintw(stdscr, 1, 42, stateProgressHeader.c_str());
-    mvwprintw(stdscr, 1, 76, starvationHeader.c_str());
+    mvwprintw(stdscr, 1, 80, starvationHeader.c_str());
     for (size_t i = 0; i < philosophers.size(); i++)
     {        
         
