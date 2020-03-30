@@ -72,15 +72,14 @@ void UI::refreshView()
     while (table.getIsDinner())
     {
         clear();
-        refreshStates();
+		refreshStatuses();
         wrefresh(window);
         std::this_thread::sleep_for(std::chrono::milliseconds(150));
     }
 }
 
-void UI::refreshStates()
+void UI::refreshStatuses()
 {
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
     start_color();
     init_color(COLOR_RED, 400, 0, 0);
     init_color(COLOR_MAGENTA, 400, 600, 900);                   

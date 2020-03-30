@@ -25,14 +25,12 @@ private:
 
     WINDOW* window;
 
-    void checkWindowSize();
     void initializeWindow();
     void destroyWindow(WINDOW* window);
     void refreshView();
-    void refreshStates();
+    void refreshStatuses();
     void refreshState(WINDOW *win, int y, int x, float progress,  std::string name, std::string status);  
-
-    void waitForPressedKey();
+    void endVisualisation();
 
 
 
