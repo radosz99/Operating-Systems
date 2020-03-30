@@ -41,6 +41,7 @@ public:
 	void dinnerStart();
 	void dinnerStop();
 	const std::array<Philosopher, 7> &getPhilosophers();
+	const std::array<Chopstick, 7> &getChopsticks();
 	const table_setup &getSetup();
     bool getIsDinner() const;
 
