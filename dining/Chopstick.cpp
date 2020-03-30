@@ -26,3 +26,7 @@ void Chopstick::mealFinished()
 	dirty = true;
 	talk.letEveryoneKnow();
 }
+
+int Chopstick::getOwner() const {
+        return owner;
+    }

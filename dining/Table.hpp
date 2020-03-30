@@ -27,13 +27,13 @@ private:
 	std::array<Philosopher, philosophersAmount> philosophers
 	{
 	   {
-			{ 1, " Franky", setup, chopsticks[0], chopsticks[1] },
-			{ 2, "  Tommy", setup, chopsticks[1], chopsticks[2] },
-			{ 3, "Turkish", setup, chopsticks[2], chopsticks[3] },
-			{ 4, " Mickey", setup, chopsticks[3], chopsticks[4] },
-			{ 5, "    Avi", setup, chopsticks[4], chopsticks[5] },
-			{ 6, "  Boris", setup, chopsticks[5], chopsticks[6] },
-			{ 7, "   Tony",   setup, chopsticks[6], chopsticks[0] },
+			{ 1, "Austin", setup, chopsticks[0], chopsticks[1] },
+			{ 2, "Barnie", setup, chopsticks[1], chopsticks[2] },
+			{ 3, "Cedric", setup, chopsticks[2], chopsticks[3] },
+			{ 4, "Darren", setup, chopsticks[3], chopsticks[4] },
+			{ 5, "Elijah", setup, chopsticks[4], chopsticks[5] },
+			{ 6, "Freddy", setup, chopsticks[5], chopsticks[6] },
+			{ 7, "George",   setup, chopsticks[6], chopsticks[0] },
 		  }
 	};
 

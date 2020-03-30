@@ -57,7 +57,7 @@ void Philosopher::eat()
 
 void Philosopher::wait()
 {
-	int delayCount = Random().randomInt(60, 100);
+	int delayCount = Random().randomInt(100, 160);
 
 	for (int i = 1; i <= delayCount; i++)
 	{
